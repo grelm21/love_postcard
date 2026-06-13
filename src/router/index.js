@@ -8,6 +8,31 @@ const router = createRouter({
       name: 'main',
       component: () => import('../views/MainView.vue'),
     },
+    {
+      path: '/hub',
+      name: 'hub',
+      component: () => import('../views/HubView.vue'),
+    },
+    {
+      path: '/wheel',
+      name: 'wheel',
+      component: () => import('../views/WheelView.vue'),
+    },
+    {
+      path: '/scratch',
+      name: 'scratch',
+      component: () => import('../views/ScratchView.vue'),
+    },
+    {
+      path: '/timeline',
+      name: 'timeline',
+      component: () => import('../views/TimelineView.vue'),
+    },
+    {
+      path: '/letter',
+      name: 'letter',
+      component: () => import('../views/LetterView.vue'),
+    },
   ],
 })
 

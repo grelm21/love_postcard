@@ -3,8 +3,6 @@ const props = defineProps(['state', 'title'])
 const title = props.title || 'Подтвердить'
 </script>
 <template>
-  <div>
-    <button :class="`regular button ${state}`" id="button">{{ title }}</button>
-  </div>
+  <button :class="`regular button ${state}`" id="button">{{ title }}</button>
 </template>
 <style scoped></style>
