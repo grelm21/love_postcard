@@ -8,9 +8,33 @@ import { hubPage, hubItems } from '../data/content'
   <div
     class="flex flex-col gap-y-8 lg:grid lg:grid-cols-2 lg:gap-y-8 lg:gap-x-4 justify-center items-center"
   >
-    <div class="flex flex-col lg:col-span-2 justify-center items-center">
-      <span class="header text-2xl">{{ hubPage.title }}</span>
-      <span class="font-manrope font-bold">{{ hubPage.subtitle }}</span>
+    <div class="flex flex-col lg:col-span-2 justify-center items-center gap-y-8">
+      <span class="title-hero">Открытка для любимой</span>
+      <span class="title-section">{{ hubPage.title }}</span>
+      <span class="subtitle">{{ hubPage.subtitle }}</span>
+      <span class="badge">Hello</span>
+    </div>
+    <div v-for="item in hubItems" :key="item.name" class="flex flex-col gap-y-2 justify-center">
+      <div class="flex gap-x-4 tip-text justify-center">
+        <span> {{ item.emoji }}</span>
+        <span>{{ item.title }}</span>
+      </div>
+      <router-link
+        :to="item.path"
+        :class="['flex justify-center', { 'pointer-events-none': item.state === 'disabled' }]"
+        :tabindex="item.disabled === true ? -1 : 0"
+        custom
+        v-slot="{ navigate }"
+      >
+        <BtnComponent
+          variant="ghost"
+          size="md"
+          :disabled="item.disabled"
+          tag="button"
+          @click="navigate"
+          >{{ item.description }}</BtnComponent
+        >
+      </router-link>
     </div>
     <div class="flex justify-center">
       <router-link to="/">

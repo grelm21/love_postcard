@@ -26,6 +26,7 @@ export const hubItems = [
     title: 'Колесо фортуны',
     description: 'Крути и узнай, что тебя ждёт',
     emoji: '🎡',
+    disabled: false,
   },
   {
     path: '/scratch',
@@ -33,7 +34,7 @@ export const hubItems = [
     title: 'Скретч-карта (скоро)',
     description: 'Сотри слой и открой послание',
     emoji: '✨',
-    state: 'disabled',
+    disabled: true,
   },
   {
     path: '/timeline',
@@ -41,7 +42,7 @@ export const hubItems = [
     title: 'Наши воспоминания (скоро)',
     description: 'Таймлайн самых тёплых моментов',
     emoji: '📸',
-    state: 'disabled',
+    disabled: true,
   },
   {
     path: '/letter',
@@ -49,6 +50,6 @@ export const hubItems = [
     title: 'Письмо (скоро)',
     description: 'Открой письмо по кусочкам',
     emoji: '💌',
-    state: 'disabled',
+    disabled: true,
   },
 ]
