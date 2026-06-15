@@ -37,18 +37,4 @@ const { particles } = useParticles(30)
   opacity: 0;
   animation: float-up linear infinite backwards;
 }
-
-@keyframes float-up {
-  from {
-    transform: translateY(90vh);
-    opacity: 0;
-  }
-  20% {
-    opacity: 0.6;
-  }
-  to {
-    transform: translateY(-110vh);
-    opacity: 0;
-  }
-}
 </style>

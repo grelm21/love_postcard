@@ -1,7 +1,17 @@
 <script setup>
+import { onMounted } from 'vue'
 import BtnComponent from '@/components/BtnComponent.vue'
 import GlassCard from '@/components/GlassCardComponent.vue'
 import { hubPage, hubItems } from '../data/content'
+import { useConfetti } from '@/composables/useConfetti'
+import { useToast } from '@/composables/UseToast'
+
+const { showToast } = useToast()
+const { confetti } = useConfetti()
+
+function onWin() {
+  confetti(45)
+}
 </script>
 
 <template>
@@ -43,10 +53,14 @@ import { hubPage, hubItems } from '../data/content'
       </router-link>
     </div>
     <div class="flex justify-center">
-      <BtnComponent variant="ghost" size="md" tag="button">Ку-ку ❤️</BtnComponent>
+      <BtnComponent variant="ghost" size="md" tag="button" @click="onWin()"
+        >Конфетти ❤️</BtnComponent
+      >
     </div>
     <div class="flex justify-center">
-      <BtnComponent variant="primary" size="sm" tag="button">Ку-ку ❤️</BtnComponent>
+      <BtnComponent variant="primary" size="sm" tag="button" @click="showToast('Хаб ❤️')"
+        >Тост Ку-ку ❤️</BtnComponent
+      >
     </div>
     <div class="flex justify-center">
       <BtnComponent variant="ghost" size="sm" tag="button">Ку-ку ❤️</BtnComponent>

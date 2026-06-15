@@ -4,6 +4,10 @@ import { ref } from 'vue'
 import { watch } from 'vue'
 import { mainDialog } from '../data/content'
 import MainButton from './MainButtonComponent.vue'
+import BtnComponent from './BtnComponent.vue'
+import { useToast } from '@/composables/UseToast'
+
+const { showToast } = useToast()
 
 const dialogWindow = ref(null)
 const props = defineProps(['title', 'text', 'photo', 'visible'])
@@ -40,6 +44,11 @@ watch(
       <p class="font-manrope">
         {{ mainDialog.text }}
       </p>
+      <div class="flex justify-center">
+        <BtnComponent variant="primary" size="sm" tag="button" @click="showToast('Диалог ❤️')"
+          >Тост Ку-ку ❤️></BtnComponent
+        >
+      </div>
       <router-link :to="mainDialog.explorePath" class="flex justify-center mb-8">
         <MainButton :title="mainDialog.exploreButton" />
       </router-link>
