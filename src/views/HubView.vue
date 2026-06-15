@@ -1,6 +1,6 @@
 <script setup>
-import MainButton from '../components/MainButtonComponent.vue'
 import BtnComponent from '@/components/BtnComponent.vue'
+import GlassCard from '@/components/GlassCardComponent.vue'
 import { hubPage, hubItems } from '../data/content'
 </script>
 
@@ -13,6 +13,7 @@ import { hubPage, hubItems } from '../data/content'
       <span class="title-section">{{ hubPage.title }}</span>
       <span class="subtitle">{{ hubPage.subtitle }}</span>
       <span class="badge">Hello</span>
+      <GlassCard>Привет! Давай поговорим, что нас ждем впереди</GlassCard>
     </div>
     <div v-for="item in hubItems" :key="item.name" class="flex flex-col gap-y-2 justify-center">
       <div class="flex gap-x-4 tip-text justify-center">
@@ -21,7 +22,7 @@ import { hubPage, hubItems } from '../data/content'
       </div>
       <router-link
         :to="item.path"
-        :class="['flex justify-center', { 'pointer-events-none': item.state === 'disabled' }]"
+        :class="['flex justify-center', { 'pointer-events-none': item.disabled === true }]"
         :tabindex="item.disabled === true ? -1 : 0"
         custom
         v-slot="{ navigate }"
@@ -51,7 +52,7 @@ import { hubPage, hubItems } from '../data/content'
       <BtnComponent variant="ghost" size="sm" tag="button">Ку-ку ❤️</BtnComponent>
     </div>
     <div class="flex justify-center">
-      <router-link class="flex justify-center" to="/" tabondex="-1">
+      <router-link class="flex justify-center" to="/" tabindex="-1">
         <BtnComponent variant="primary" size="md" tag="button" :disabled="true"
           >Ку-ку ❤️</BtnComponent
         >

@@ -22,6 +22,7 @@ const backTo = computed(() => (route.path === '/hub' ? '/' : '/hub'))
     transform 0.2s ease-in-out,
     color 0.2s ease-in-out,
     background 0.2s ease-in-out;
+  text-decoration: none;
 }
 
 .back-btn:hover {

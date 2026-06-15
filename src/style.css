@@ -160,7 +160,37 @@ body {
   font-family: 'Nunito', sans-serif;
   font-weight: 400;
   font-size: 1rem;
-  line-height: 0.75rem;
+  line-height: 1.5rem;
+}
+
+/* ── Input ── */
+.field {
+  width: 100%;
+  max-width: 280px;
+}
+
+.field-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--rose-soft);
+  border-radius: var(--radius-pill);
+  background: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  color: var(--ink);
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.field-input:focus {
+  border-color: var(--rose);
+  box-shadow: 0 0 0 4px rgba(255, 92, 138, 0.15);
+}
+
+.field-input::placeholder {
+  color: #c4b5c0;
 }
 
 .button {

@@ -7,12 +7,13 @@ const route = useRoute()
 
 <template>
   <div class="scene">
+    <FloatingParticles />
+
     <div class="wrap">
       <BackButtonComponent v-if="route.path !== '/'" />
       <router-view />
     </div>
   </div>
-  <FloatingParticles />
 </template>
 
 <style scoped></style>
