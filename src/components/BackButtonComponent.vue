@@ -17,7 +17,6 @@ const backTo = computed(() => (route.path === '/hub' ? '/' : '/hub'))
   font-size: 0.9rem;
   color: var(--ink-muted);
   font-weight: 700;
-  font-style: bold;
   padding: 0.5rem 0.75rem;
   transition:
     transform 0.2s ease-in-out,

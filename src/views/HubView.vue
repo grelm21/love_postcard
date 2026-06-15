@@ -1,5 +1,6 @@
 <script setup>
 import MainButton from '../components/MainButtonComponent.vue'
+import BtnComponent from '@/components/BtnComponent.vue'
 import { hubPage, hubItems } from '../data/content'
 </script>
 
@@ -11,18 +12,37 @@ import { hubPage, hubItems } from '../data/content'
       <span class="header text-2xl">{{ hubPage.title }}</span>
       <span class="font-manrope font-bold">{{ hubPage.subtitle }}</span>
     </div>
-    <div v-for="item in hubItems" :key="item.name" class="flex flex-col gap-y-2 justify-center">
-      <div class="flex gap-x-4 tip-text justify-center">
-        <span> {{ item.emoji }}</span>
-        <span>{{ item.title }}</span>
-      </div>
-      <router-link
-        :to="item.path"
-        :class="['flex justify-center', { 'pointer-events-none': item.state === 'disabled' }]"
-        :tabindex="item.state === 'disabled' ? -1 : 0"
-      >
-        <MainButton :state="item.state" :title="item.description" />
+    <div class="flex justify-center">
+      <router-link to="/">
+        <BtnComponent variant="primary" size="md" tag="button">Ку-ку ❤️</BtnComponent>
       </router-link>
+    </div>
+    <div class="flex justify-center">
+      <BtnComponent variant="ghost" size="md" tag="button">Ку-ку ❤️</BtnComponent>
+    </div>
+    <div class="flex justify-center">
+      <BtnComponent variant="primary" size="sm" tag="button">Ку-ку ❤️</BtnComponent>
+    </div>
+    <div class="flex justify-center">
+      <BtnComponent variant="ghost" size="sm" tag="button">Ку-ку ❤️</BtnComponent>
+    </div>
+    <div class="flex justify-center">
+      <router-link class="flex justify-center" to="/" tabondex="-1">
+        <BtnComponent variant="primary" size="md" tag="button" :disabled="true"
+          >Ку-ку ❤️</BtnComponent
+        >
+      </router-link>
+    </div>
+    <div class="flex justify-center">
+      <BtnComponent variant="ghost" size="md" tag="button" :disabled="true">Ку-ку ❤️</BtnComponent>
+    </div>
+    <div class="flex justify-center">
+      <BtnComponent variant="primary" size="sm" tag="button" :disabled="true"
+        >Ку-ку ❤️</BtnComponent
+      >
+    </div>
+    <div class="flex justify-center">
+      <BtnComponent variant="ghost" size="sm" tag="button" :disabled="true">Ку-ку ❤️</BtnComponent>
     </div>
   </div>
 </template>
